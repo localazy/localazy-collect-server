@@ -7,7 +7,7 @@ fun main() {
 
     val app = Javalin.create().start(7000)
 
-    app.post("/:path") { ctx ->
+    app.post(":path") { ctx ->
         with(ctx) {
             File("data/${pathParam("path")}").apply {
                 parentFile.mkdirs()
